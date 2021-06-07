@@ -3,10 +3,15 @@ add_shortcode('custom_search_shortcode', 'custom_search_shortcode');
 function custom_search_shortcode()
 {
 
+<<<<<<< HEAD
+?>
+
+=======
 
 ?>
 
 
+>>>>>>> 7fb046a28bf18900bb93cc777274bbfd63486886
     <div class="custom-search-wrapper">
         <div class="featured-wrapper">
             <h2>Featured publications</h2>

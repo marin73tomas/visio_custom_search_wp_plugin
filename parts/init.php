@@ -14,6 +14,26 @@ add_action('rest_api_init', 'search_endpoint');
 
 function get_results($request)
 {
+<<<<<<< HEAD
+    $get_list = $request['get_list'];
+    if (isset($get_list)) {
+        $tissue_children =  get_terms(array(
+            'taxonomy' => 'tissue_type',
+            'hide_empty' => false
+        ));
+        $segment_children =  get_terms(array(
+            'taxonomy' => 'segment_type',
+            'hide_empty' => false
+        ));
+
+        $list = [
+            "segment_list" => $segment_children,
+            "tissue_list" => $tissue_children,
+        ];
+        return $list;
+    }
+=======
+>>>>>>> 7fb046a28bf18900bb93cc777274bbfd63486886
 
     $loadmore = true;
     $type = $request['type'];
@@ -88,6 +108,9 @@ function get_results($request)
             $my_tissue_types = get_the_terms($id, 'tissue_type');
             $my_product_types = get_the_terms($id, 'appcats');
 
+<<<<<<< HEAD
+
+=======
             $tissue_children =  get_terms(array(
                 'taxonomy' => 'tissue_type',
                 'hide_empty' => false
@@ -96,6 +119,7 @@ function get_results($request)
                 'taxonomy' => 'segment_type',
                 'hide_empty' => false
             ));
+>>>>>>> 7fb046a28bf18900bb93cc777274bbfd63486886
 
 
             $new_item = [
@@ -106,8 +130,12 @@ function get_results($request)
                 "link" => $link,
                 "date" => $post_date,
                 "journal" => $journal_name,
+<<<<<<< HEAD
+
+=======
                 "segment_list" => $segment_children,
                 "tissue_list" => $tissue_children,
+>>>>>>> 7fb046a28bf18900bb93cc777274bbfd63486886
                 "tissue_types" => $my_tissue_types,
                 "segment_types" => $my_segment_types,
                 "product_types" => $my_product_types,
